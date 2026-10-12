@@ -1,0 +1,2 @@
+fuente,num_leaves,min_sum_hessian_in_leaf,num_iterations,auc
+BO_AUC,256,0.0299943000368938,1439,0.919070894119264

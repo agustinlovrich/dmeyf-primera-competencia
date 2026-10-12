@@ -1,0 +1,160 @@
+== rank_prestamos == nthread=8 nseeds=40 us=1.00 ==
+R: R version 4.6.1 (2026-06-24) | lightgbm 4.7.0 | data.table 1.18.6.1 
+semillas: 467473 754373 564671 248189 373721 437243 905161 391619 289841 961159 670639 635021 850207 975433 740939 723103 889519 161599 535219 373193 344189 840743 279767 612817 723193 942659 113539 676717 363809 348571 883247 178627 814859 114761 224897 448093 695327 824947 123341 322901 
+leyendo crudo.csv ...
+filas: 983061 | columnas: 155 
+dq1: ccajas_depositos no-NA en 202105 = 0 (debe ser 0)
+npos 202103-05 = 6083 | ancla = 6083 -> OK
+variables base: 152 (incluye los 2 prestamos)
+normalizando por rango, mes a mes...
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   1617968   86.5    3010370  160.8   2357081  125.9
+Vcells 292805116 2234.0  468986547 3578.1 468985260 3578.1
+retrovisores y diferencias...
+   25 / 152 
+   50 / 152 
+   75 / 152 
+   100 / 152 
+   125 / 152 
+   150 / 152 
+            used   (Mb) gc trigger    (Mb)  max used   (Mb)
+Ncells   1619829   86.6    3010370   160.8   2357081  125.9
+Vcells 890510375 6794.1 1401180716 10690.2 891494434 6801.6
+FE historico (tend3 + avg3) sobre los rankings...
+  columnas historicas creadas: 304 
+features totales: 1064 (ancla ~1064) | features BO: 1050 (ancla 1050)
+BO: train 326184 filas (4074 pos) -> valida 164114 (1098 BAJA+2 reales)
+inicio BO: 13:31:29 | tope 120 min
+Computing y column(s) for design. Not provided.
+[BO 1] hojas 184 | hess 0.00931 | arb 1818 -> AUC 0.91790 | gan@11000 443.3M | gan_best 449.9M
+[BO 2] hojas 83 | hess 0.01383 | arb 2590 -> AUC 0.91760 | gan@11000 440.0M | gan_best 442.2M
+[BO 3] hojas 253 | hess 0.02567 | arb 1497 -> AUC 0.91888 | gan@11000 447.7M | gan_best 448.2M
+[BO 4] hojas 103 | hess 0.00331 | arb 697 -> AUC 0.91559 | gan@11000 437.8M | gan_best 447.7M
+[BO 5] hojas 152 | hess 0.01699 | arb 2666 -> AUC 0.91715 | gan@11000 447.7M | gan_best 455.9M
+[BO 6] hojas 42 | hess 0.00133 | arb 3066 -> AUC 0.91818 | gan@11000 444.4M | gan_best 447.1M
+[BO 7] hojas 133 | hess 0.02006 | arb 1358 -> AUC 0.91855 | gan@11000 454.3M | gan_best 459.8M
+[BO 8] hojas 30 | hess 0.02152 | arb 2124 -> AUC 0.91753 | gan@11000 441.1M | gan_best 459.2M
+[BO 9] hojas 180 | hess 0.02827 | arb 3369 -> AUC 0.91616 | gan@11000 451.0M | gan_best 452.6M
+[BO 10] hojas 216 | hess 0.00825 | arb 935 -> AUC 0.91769 | gan@11000 452.1M | gan_best 460.4M
+[mbo] 0: num_iterations=1818; num_leaves=184; min_sum_hessian_in_leaf=0.00931 : y = 0.918 : 341.7 secs : initdesign
+[mbo] 0: num_iterations=2590; num_leaves=83; min_sum_hessian_in_leaf=0.0138 : y = 0.918 : 387.8 secs : initdesign
+[mbo] 0: num_iterations=1497; num_leaves=253; min_sum_hessian_in_leaf=0.0257 : y = 0.919 : 297.6 secs : initdesign
+[mbo] 0: num_iterations=697; num_leaves=103; min_sum_hessian_in_leaf=0.00331 : y = 0.916 : 112.0 secs : initdesign
+[mbo] 0: num_iterations=2666; num_leaves=152; min_sum_hessian_in_leaf=0.017 : y = 0.917 : 451.3 secs : initdesign
+[mbo] 0: num_iterations=3066; num_leaves=42; min_sum_hessian_in_leaf=0.00133 : y = 0.918 : 416.8 secs : initdesign
+[mbo] 0: num_iterations=1358; num_leaves=133; min_sum_hessian_in_leaf=0.0201 : y = 0.919 : 232.2 secs : initdesign
+[mbo] 0: num_iterations=2124; num_leaves=30; min_sum_hessian_in_leaf=0.0215 : y = 0.918 : 285.0 secs : initdesign
+[mbo] 0: num_iterations=3369; num_leaves=180; min_sum_hessian_in_leaf=0.0283 : y = 0.916 : 593.5 secs : initdesign
+[mbo] 0: num_iterations=935; num_leaves=216; min_sum_hessian_in_leaf=0.00825 : y = 0.918 : 177.1 secs : initdesign
+[BO 11] hojas 256 | hess 0.02608 | arb 1190 -> AUC 0.91842 | gan@11000 455.4M | gan_best 458.1M
+[mbo] 1: num_iterations=1190; num_leaves=256; min_sum_hessian_in_leaf=0.0261 : y = 0.918 : 236.3 secs : infill_ei
+[BO 12] hojas 256 | hess 0.01767 | arb 1441 -> AUC 0.91879 | gan@11000 455.4M | gan_best 456.5M
+[mbo] 2: num_iterations=1441; num_leaves=256; min_sum_hessian_in_leaf=0.0177 : y = 0.919 : 284.8 secs : infill_ei
+[BO 13] hojas 204 | hess 0.02992 | arb 1442 -> AUC 0.91855 | gan@11000 451.0M | gan_best 454.9M
+[mbo] 3: num_iterations=1442; num_leaves=204; min_sum_hessian_in_leaf=0.0299 : y = 0.919 : 268.2 secs : infill_ei
+[BO 14] hojas 256 | hess 0.02226 | arb 1568 -> AUC 0.91868 | gan@11000 452.1M | gan_best 463.1M
+[mbo] 4: num_iterations=1568; num_leaves=256; min_sum_hessian_in_leaf=0.0223 : y = 0.919 : 309.2 secs : infill_ei
+[BO 15] hojas 256 | hess 0.02999 | arb 1439 -> AUC 0.91907 | gan@11000 455.4M | gan_best 462.0M
+[mbo] 5: num_iterations=1439; num_leaves=256; min_sum_hessian_in_leaf=0.03 : y = 0.919 : 288.3 secs : infill_ei
+[BO 16] hojas 104 | hess 0.02999 | arb 1597 -> AUC 0.91857 | gan@11000 456.5M | gan_best 462.6M
+[mbo] 6: num_iterations=1597; num_leaves=104; min_sum_hessian_in_leaf=0.03 : y = 0.919 : 262.3 secs : infill_ei
+[BO 17] hojas 16 | hess 0.02998 | arb 1413 -> AUC 0.91639 | gan@11000 448.8M | gan_best 455.4M
+[mbo] 7: num_iterations=1413; num_leaves=16; min_sum_hessian_in_leaf=0.03 : y = 0.916 : 194.0 secs : infill_ei
+[BO 18] hojas 143 | hess 0.02999 | arb 1605 -> AUC 0.91813 | gan@11000 447.7M | gan_best 449.9M
+[mbo] 8: num_iterations=1605; num_leaves=143; min_sum_hessian_in_leaf=0.03 : y = 0.918 : 285.8 secs : infill_ei
+[BO 19] hojas 111 | hess 0.00011 | arb 1561 -> AUC 0.91847 | gan@11000 448.8M | gan_best 449.4M
+[mbo] 9: num_iterations=1561; num_leaves=111; min_sum_hessian_in_leaf=0.000111 : y = 0.918 : 266.5 secs : infill_ei
+[BO 20] hojas 242 | hess 0.02996 | arb 1386 -> AUC 0.91837 | gan@11000 458.7M | gan_best 458.7M
+[mbo] 10: num_iterations=1386; num_leaves=242; min_sum_hessian_in_leaf=0.03 : y = 0.918 : 283.5 secs : infill_ei
+[BO 21] hojas 174 | hess 0.02127 | arb 1326 -> AUC 0.91830 | gan@11000 454.3M | gan_best 454.3M
+[mbo] 11: num_iterations=1326; num_leaves=174; min_sum_hessian_in_leaf=0.0213 : y = 0.918 : 252.4 secs : infill_ei
+[BO 22] hojas 108 | hess 0.01722 | arb 1923 -> AUC 0.91833 | gan@11000 452.1M | gan_best 457.1M
+[mbo] 12: num_iterations=1923; num_leaves=108; min_sum_hessian_in_leaf=0.0172 : y = 0.918 : 319.1 secs : infill_ei
+[BO 23] hojas 16 | hess 0.00174 | arb 3497 -> AUC 0.91817 | gan@11000 441.1M | gan_best 462.0M
+[mbo] 13: num_iterations=3497; num_leaves=16; min_sum_hessian_in_leaf=0.00174 : y = 0.918 : 450.5 secs : infill_ei
+[BO 24] hojas 57 | hess 0.02087 | arb 3499 -> AUC 0.91723 | gan@11000 453.2M | gan_best 454.3M
+[mbo] 14: num_iterations=3499; num_leaves=57; min_sum_hessian_in_leaf=0.0209 : y = 0.917 : 512.4 secs : infill_ei
+BO lista en 125.2 min | mejor AUC 0.91907 
+** relacion AUC<->ganancia en la BO: cor(auc, gan_best) = 0.325 (n=24 evals) | config elegida por AUC **
+hiperparametros finales [BO_AUC]: hojas 256 | hess 0.02999430 | arboles 1439
+             used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells    2527471  135.0    4224327   225.7    4224327   225.7
+Vcells 1054829081 8047.8 2505657287 19116.7 2084750960 15905.4
+--- modelo de JUNIO ( 10 semillas) ---
+  [junio] semilla 467473 ok ( 1 / 10 )
+  [junio] semilla 754373 ok ( 2 / 10 )
+  [junio] semilla 564671 ok ( 3 / 10 )
+  [junio] semilla 248189 ok ( 4 / 10 )
+  [junio] semilla 373721 ok ( 5 / 10 )
+  [junio] semilla 437243 ok ( 6 / 10 )
+  [junio] semilla 905161 ok ( 7 / 10 )
+  [junio] semilla 391619 ok ( 8 / 10 )
+  [junio] semilla 289841 ok ( 9 / 10 )
+  [junio] semilla 961159 ok ( 10 / 10 )
+
+=== ENVIOS OPTIMOS EN JUNIO (202106) ===
+   corte gan_media gan_desvio gan_ensamble
+   <int>     <num>      <num>        <num>
+1:  9000    445.17   3.950823       462.00
+2:  9500    449.68   5.160760       459.25
+3: 10000    453.20   5.313505       456.50
+4: 10500    453.64   5.274140       455.95
+5: 11000    454.96   3.887358       454.30
+6: 11500    454.30   4.407632       450.45
+7: 12000    454.63   5.186746       452.10
+8: 12500    453.97   3.229998       452.65
+9: 13000    453.53   4.725592       456.50
+corte optimo (ensamble): 9000 -> 462.0 M | referencia corte 10500: 455.9 M
+null device 
+          1 
+             used    (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells    2534610   135.4    4224327   225.7    4224327   225.7
+Vcells 1398243501 10667.8 2505657287 19116.7 2091781211 15959.1
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   2533475  135.4    4224327   225.7    4224327   225.7
+Vcells 878598769 6703.2 2405494996 18352.5 2797670436 21344.6
+train final: 654066 filas, 1064 features (prestamos reincorporados)
+  semilla 467473 ok (1/40)
+  semilla 754373 ok (2/40)
+  semilla 564671 ok (3/40)
+  semilla 248189 ok (4/40)
+  semilla 373721 ok (5/40)
+  semilla 437243 ok (6/40)
+  semilla 905161 ok (7/40)
+  semilla 391619 ok (8/40)
+  semilla 289841 ok (9/40)
+  semilla 961159 ok (10/40)
+  semilla 670639 ok (11/40)
+  semilla 635021 ok (12/40)
+  semilla 850207 ok (13/40)
+  semilla 975433 ok (14/40)
+  semilla 740939 ok (15/40)
+  semilla 723103 ok (16/40)
+  semilla 889519 ok (17/40)
+  semilla 161599 ok (18/40)
+  semilla 535219 ok (19/40)
+  semilla 373193 ok (20/40)
+  semilla 344189 ok (21/40)
+  semilla 840743 ok (22/40)
+  semilla 279767 ok (23/40)
+  semilla 612817 ok (24/40)
+  semilla 723193 ok (25/40)
+  semilla 942659 ok (26/40)
+  semilla 113539 ok (27/40)
+  semilla 676717 ok (28/40)
+  semilla 363809 ok (29/40)
+  semilla 348571 ok (30/40)
+  semilla 883247 ok (31/40)
+  semilla 178627 ok (32/40)
+  semilla 814859 ok (33/40)
+  semilla 114761 ok (34/40)
+  semilla 224897 ok (35/40)
+  semilla 448093 ok (36/40)
+  semilla 695327 ok (37/40)
+  semilla 824947 ok (38/40)
+  semilla 123341 ok (39/40)
+  semilla 322901 ok (40/40)
+submits escritos en exp_rank_prestamos_junbo_hist/entrega 
+formato OK en 369 archivos
+subiendo al bucket...
+DONE_JUNBO_HIST
